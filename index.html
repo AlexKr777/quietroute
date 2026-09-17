@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d18" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta
+      name="description"
+      content="Тихая поездка в ночном трамвае под дождём и спокойную музыку."
+    />
+    <title>23:47 — тихий маршрут</title>
+  </head>
+  <body>
+    <main id="app" class="experience" aria-labelledby="experience-title">
+      <div class="scene" aria-hidden="true">
+        <div id="scene-camera" class="scene__camera">
+          <canvas id="scene-canvas" width="640" height="360"></canvas>
+          <div class="scene__shade"></div>
+        </div>
+      </div>
+
+      <p class="sr-only">
+        Ночной трамвай движется по тихому городу. По большому окну стекает дождь,
+        а в салоне горит приглушённый тёплый свет.
+      </p>
+
+      <section id="entry-panel" class="entry" aria-describedby="entry-note">
+        <div class="entry__meta" aria-hidden="true">
+          <span class="entry__time">23:47</span>
+          <span>ночной трамвай</span>
+        </div>
+        <h1 id="experience-title"><span>тихий</span> маршрут</h1>
+        <p class="entry__line"><span aria-hidden="true"></span>дождь уже начался</p>
+        <button id="enter-button" class="entry__button" type="button">
+          <span class="entry__button-label">сесть у окна</span>
+          <span class="entry__button-arrow" aria-hidden="true">→</span>
+        </button>
+        <p id="entry-note" class="entry__note">
+          звук и полный экран — после посадки
+        </p>
+      </section>
+
+      <aside
+        id="sound-controls"
+        class="sound-controls"
+        aria-label="Микшер звука"
+        aria-hidden="true"
+        data-expanded="true"
+        inert
+      >
+        <div class="sound-controls__header">
+          <button
+            id="sound-drag-handle"
+            class="sound-controls__drag-handle"
+            type="button"
+            aria-label="Переместить панель звука; используйте стрелки или перетаскивание, Escape — вернуть"
+            aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight Escape"
+            title="Потянуть панель"
+          >
+            <span aria-hidden="true">звук</span>
+          </button>
+          <div class="sound-controls__actions">
+            <button
+              id="ambience-toggle"
+              class="sound-controls__utility"
+              type="button"
+              aria-expanded="true"
+              aria-controls="additional-sounds"
+            >
+              скрыть
+            </button>
+            <button
+              id="fullscreen-toggle"
+              class="sound-controls__utility"
+              type="button"
+              aria-pressed="false"
+            >
+              полный экран
+            </button>
+            <button
+              id="master-mute"
+              class="sound-controls__master"
+              type="button"
+              aria-pressed="false"
+            >
+              тишина
+            </button>
+          </div>
+        </div>
+
+        <button id="audio-retry" class="sound-controls__retry" type="button" hidden>
+          повторить звук
+        </button>
+
+        <div class="sound-controls__row">
+          <button
+            id="rain-toggle"
+            class="sound-controls__channel"
+            type="button"
+            aria-pressed="true"
+          >
+            <span aria-hidden="true">●</span> дождь
+          </button>
+          <input
+            id="rain-volume"
+            type="range"
+            min="0"
+            max="100"
+            value="44"
+            aria-label="Громкость дождя"
+          />
+        </div>
+
+        <div class="sound-controls__row">
+          <button
+            id="music-toggle"
+            class="sound-controls__channel"
+            type="button"
+            aria-pressed="true"
+            title="Двойное нажатие — другой трек"
+          >
+            <span aria-hidden="true">●</span> музыка
+          </button>
+          <input
+            id="music-volume"
+            type="range"
+            min="0"
+            max="100"
+            value="38"
+            aria-label="Громкость музыки"
+          />
+        </div>
+
+        <div
+          id="additional-sounds"
+          class="sound-controls__extras"
+          aria-hidden="false"
+        >
+          <div class="sound-controls__extras-inner">
+            <div class="sound-controls__row">
+              <button
+                id="tram-toggle"
+                class="sound-controls__channel"
+                type="button"
+                aria-pressed="true"
+              >
+                <span aria-hidden="true">●</span> вагон
+              </button>
+              <input
+                id="tram-volume"
+                type="range"
+                min="0"
+                max="100"
+                value="22"
+                aria-label="Громкость вагона и рельсов"
+              />
+            </div>
+
+            <div class="sound-controls__row">
+              <button
+                id="wind-toggle"
+                class="sound-controls__channel"
+                type="button"
+                aria-pressed="false"
+              >
+                <span aria-hidden="true">●</span> ветер
+              </button>
+              <input
+                id="wind-volume"
+                type="range"
+                min="0"
+                max="100"
+                value="28"
+                aria-label="Громкость ветра"
+              />
+            </div>
+
+            <div class="sound-controls__row">
+              <button
+                id="night-toggle"
+                class="sound-controls__channel"
+                type="button"
+                aria-pressed="false"
+              >
+                <span aria-hidden="true">●</span> ночь
+              </button>
+              <input
+                id="night-volume"
+                type="range"
+                min="0"
+                max="100"
+                value="28"
+                aria-label="Громкость ночных звуков"
+              />
+            </div>
+
+            <div class="sound-controls__row">
+              <button
+                id="birds-toggle"
+                class="sound-controls__channel"
+                type="button"
+                aria-pressed="false"
+              >
+                <span aria-hidden="true">●</span> птицы
+              </button>
+              <input
+                id="birds-volume"
+                type="range"
+                min="0"
+                max="100"
+                value="18"
+                aria-label="Громкость редких птиц за окном"
+              />
+            </div>
+
+            <div class="sound-controls__row">
+              <button
+                id="thunder-toggle"
+                class="sound-controls__channel"
+                type="button"
+                aria-pressed="false"
+              >
+                <span aria-hidden="true">●</span> гром
+              </button>
+              <input
+                id="thunder-volume"
+                type="range"
+                min="0"
+                max="100"
+                value="26"
+                aria-label="Громкость далёкого грома"
+              />
+            </div>
+          </div>
+        </div>
+
+        <p id="track-status" class="sound-controls__track-status" aria-live="polite"></p>
+
+        <p id="audio-status" class="sr-only" role="status" aria-live="polite">
+          звук выключен
+        </p>
+      </aside>
+
+      <div id="load-status" class="load-status" role="status" aria-live="polite">
+        готовим окно…
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

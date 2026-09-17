@@ -1,0 +1,318 @@
+export interface RecordedMusicTrack {
+  id: string
+  title: string
+  artist: string
+  src: string
+  sourceUrl: string
+  license: {
+    name: string
+    url: string
+  }
+  trimGain: number
+  fallbackArrangementIndex: number
+}
+
+const CC0_LICENSE = {
+  name: 'CC0 1.0 Universal',
+  url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+} as const
+
+const CC_BY_LICENSE = {
+  name: 'Creative Commons Attribution 4.0 International',
+  url: 'https://creativecommons.org/licenses/by/4.0/',
+} as const
+
+export const RECORDED_LOFI_TRACKS: readonly RecordedMusicTrack[] = [
+  {
+    id: 'moon-unit',
+    title: 'Moon Unit',
+    artist: 'HoliznaCC0',
+    src: '/audio/moon-unit.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/holiznacc0/public-domain-lofi/moon-unit-lofi-reflection-dreamy/',
+    license: CC0_LICENSE,
+    trimGain: 0.15,
+    fallbackArrangementIndex: 4,
+  },
+  {
+    id: 'night-flight',
+    title: 'night flight',
+    artist: 'VHS Jazz',
+    src: '/audio/lofi/night-flight.mp3',
+    sourceUrl: 'https://archive.org/details/vcr-and-vhs-jazz',
+    license: CC0_LICENSE,
+    trimGain: 0.14,
+    fallbackArrangementIndex: 0,
+  },
+  {
+    id: 'vintage',
+    title: 'Vintage',
+    artist: 'HoliznaCC0',
+    src: '/audio/vintage.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/holiznacc0/lo-fi-and-chill/vintagemp3',
+    license: CC0_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 7,
+  },
+  {
+    id: 'skylight',
+    title: 'skylight',
+    artist: 'VHS Jazz',
+    src: '/audio/lofi/skylight.mp3',
+    sourceUrl: 'https://archive.org/details/vcr-and-vhs-jazz',
+    license: CC0_LICENSE,
+    trimGain: 0.16,
+    fallbackArrangementIndex: 3,
+  },
+  {
+    id: 'whatever',
+    title: 'Whatever',
+    artist: 'HoliznaCC0',
+    src: '/audio/whatever.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/holiznacc0/lo-fi-and-chill/whatever-2/',
+    license: CC0_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 2,
+  },
+  {
+    id: 'midnight',
+    title: 'midnight',
+    artist: 'VHS Jazz',
+    src: '/audio/lofi/midnight.mp3',
+    sourceUrl: 'https://archive.org/details/vcr-and-vhs-jazz',
+    license: CC0_LICENSE,
+    trimGain: 0.13,
+    fallbackArrangementIndex: 5,
+  },
+  {
+    id: 'pretty-little-lies',
+    title: 'Pretty Little Lies',
+    artist: 'HoliznaCC0',
+    src: '/audio/pretty-little-lies.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/holiznacc0/lo-fi-and-chill/pretty-little-lies-1/',
+    license: CC0_LICENSE,
+    trimGain: 0.22,
+    fallbackArrangementIndex: 6,
+  },
+  {
+    id: 'goodnight',
+    title: 'goodnight',
+    artist: 'VHS Jazz',
+    src: '/audio/lofi/goodnight.mp3',
+    sourceUrl: 'https://archive.org/details/vcr-and-vhs-jazz',
+    license: CC0_LICENSE,
+    trimGain: 0.14,
+    fallbackArrangementIndex: 7,
+  },
+  {
+    id: 'neon',
+    title: 'Neon',
+    artist: '1000 Handz',
+    src: '/audio/lofi/neon.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-chillstudylounge-instrumentals/neon-1/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 0,
+  },
+  {
+    id: 'pay-it-forward',
+    title: 'Pay It Forward',
+    artist: '1000 Handz',
+    src: '/audio/lofi/pay-it-forward.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-chillstudylounge-instrumentals/pay-it-forward/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 1,
+  },
+  {
+    id: 'chill-out',
+    title: 'Chill Out',
+    artist: '1000 Handz',
+    src: '/audio/lofi/chill-out.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-chillstudylounge-instrumentals/chill-out-1/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 2,
+  },
+  {
+    id: 'the-shire',
+    title: 'The Shire',
+    artist: '1000 Handz',
+    src: '/audio/lofi/the-shire.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/the-shire/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 3,
+  },
+  {
+    id: 'potential',
+    title: 'Potential',
+    artist: '1000 Handz',
+    src: '/audio/lofi/potential.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/potential/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.07,
+    fallbackArrangementIndex: 4,
+  },
+  {
+    id: 'seasons-changing',
+    title: 'Seasons Changing',
+    artist: '1000 Handz',
+    src: '/audio/lofi/seasons-changing.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/seasons-changing/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 5,
+  },
+  {
+    id: 'wednesday',
+    title: 'Wednesday',
+    artist: '1000 Handz',
+    src: '/audio/lofi/wednesday.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/wednesday-1/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 6,
+  },
+  {
+    id: 'hopeful',
+    title: 'Hopeful',
+    artist: '1000 Handz',
+    src: '/audio/lofi/hopeful.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/hopeful-3/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 7,
+  },
+  {
+    id: 'giza',
+    title: 'Giza',
+    artist: '1000 Handz',
+    src: '/audio/lofi/giza.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/giza-2/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.1,
+    fallbackArrangementIndex: 0,
+  },
+  {
+    id: 'cross-rhodes',
+    title: 'Cross Rhodes',
+    artist: '1000 Handz',
+    src: '/audio/lofi/cross-rhodes.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/cross-rhodes/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.09,
+    fallbackArrangementIndex: 1,
+  },
+  {
+    id: 'no-option',
+    title: 'No Option',
+    artist: '1000 Handz',
+    src: '/audio/lofi/no-option.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/no-option/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 2,
+  },
+  {
+    id: 'voyage',
+    title: 'Voyage',
+    artist: '1000 Handz',
+    src: '/audio/lofi/voyage.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/voyage-2/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 3,
+  },
+  {
+    id: 'overseas',
+    title: 'Overseas',
+    artist: '1000 Handz',
+    src: '/audio/lofi/overseas.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/overseas/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 4,
+  },
+  {
+    id: 'tundra',
+    title: 'Tundra',
+    artist: '1000 Handz',
+    src: '/audio/lofi/tundra.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/tundra/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 5,
+  },
+  {
+    id: 'announcement',
+    title: 'Announcement',
+    artist: '1000 Handz',
+    src: '/audio/lofi/announcement.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/announcement/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 6,
+  },
+  {
+    id: 'baker',
+    title: 'Baker',
+    artist: '1000 Handz',
+    src: '/audio/lofi/baker.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/baker/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 7,
+  },
+  {
+    id: 'abandoned',
+    title: 'Abandoned',
+    artist: '1000 Handz',
+    src: '/audio/lofi/abandoned.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/abandoned-2/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 0,
+  },
+  {
+    id: 'escape',
+    title: 'Escape',
+    artist: '1000 Handz',
+    src: '/audio/lofi/escape.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/escape-7/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 1,
+  },
+  {
+    id: 'ran-out',
+    title: 'Ran Out',
+    artist: '1000 Handz',
+    src: '/audio/lofi/ran-out.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/ran-out/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 2,
+  },
+  {
+    id: 'get-outta-there',
+    title: 'Get Outta There',
+    artist: '1000 Handz',
+    src: '/audio/lofi/get-outta-there.mp3',
+    sourceUrl: 'https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-ambientbackground-scores/get-outta-there/',
+    license: CC_BY_LICENSE,
+    trimGain: 0.08,
+    fallbackArrangementIndex: 3,
+  },
+]
+
+export function getMusicTrackCount(): number {
+  return RECORDED_LOFI_TRACKS.length
+}
+
+export function getMusicTrack(index: number): RecordedMusicTrack {
+  const count = getMusicTrackCount()
+  const normalizedIndex = ((Math.trunc(index) % count) + count) % count
+  const track = RECORDED_LOFI_TRACKS[normalizedIndex]
+  if (!track) throw new Error('No recorded music tracks are configured')
+  return track
+}

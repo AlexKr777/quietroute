@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.local
+!*.example
+
+# Generated web, Electron, and test output
+dist/
+coverage/
+playwright-report/
+test-results/
+.playwright-cli/
+output/
+QuietRouteDesktop/site/
+QuietRouteDesktop/release/
+QuietRouteDesktop/output/
+
+# Runtime state and diagnostics
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.pid
+runtime/
+state/
+data/
+tmp/
+temp/
+.cache/
+.vite/
+
+# Local packages and archives
+*.exe
+*.msi
+*.dmg
+*.AppImage
+*.asar
+*.zip
+*.tar
+*.tar.gz
+
+# Internal development material and local launch helpers
+AGENTS.md
+CODEX_*
+DECISIONS.md
+DESIGN.md
+IMPLEMENTATION_PLAN.md
+PROJECT_BRIEF.md
+docs/ideas/
+BUILD_APP.bat
+START_APP.bat
+START_SITE.bat
+Upwork_Portfolio_45_Projects/
+Upwork_Portfolio_45_Projects.zip
+
+# OS and editor metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

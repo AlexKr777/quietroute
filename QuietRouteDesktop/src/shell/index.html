@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; frame-src quiet-route://site; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="theme-color" content="#080d18" />
+    <title>Тихий маршрут</title>
+    <link rel="stylesheet" href="./shell.css" />
+    <script src="./clock.js" defer></script>
+    <script src="./clock-controls.js" defer></script>
+    <script src="./renderer.js" defer></script>
+  </head>
+  <body>
+    <div class="desktop-shell">
+      <header class="titlebar">
+        <div class="titlebar__brand" aria-label="Тихий маршрут">
+          <span class="titlebar__signal" aria-hidden="true"></span>
+          <span class="titlebar__divider" aria-hidden="true"></span>
+          <span class="titlebar__route">тихий маршрут</span>
+        </div>
+
+        <div class="titlebar__controls" aria-label="Управление окном">
+          <button
+            id="always-on-top"
+            class="window-action window-action--pin"
+            type="button"
+            aria-pressed="false"
+            aria-keyshortcuts="Control+Shift+P"
+            title="Держать поверх остальных окон (Ctrl+Shift+P)"
+          >
+            <span class="pin-mark" aria-hidden="true"></span>
+            <span class="window-action__label">поверх</span>
+          </button>
+          <button
+            id="compact-toggle"
+            class="window-action window-action--compact"
+            type="button"
+            aria-pressed="false"
+            aria-keyshortcuts="Control+Shift+M"
+            title="Переключить микро-окно (Ctrl+Shift+M)"
+          >
+            <span class="compact-mark" aria-hidden="true"></span>
+            <span id="compact-label" class="window-action__label">мини</span>
+          </button>
+          <button
+            id="minimize-window"
+            class="window-action window-action--system"
+            type="button"
+            aria-label="Свернуть окно"
+            title="Свернуть"
+          >
+            <span aria-hidden="true">—</span>
+          </button>
+          <button
+            id="close-window"
+            class="window-action window-action--system window-action--close"
+            type="button"
+            aria-label="Закрыть приложение"
+            title="Закрыть"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="scene-host">
+        <div id="clock-widget" class="scene-clock-widget">
+          <time
+            id="live-clock"
+            class="scene-clock"
+            datetime=""
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-label="Текущее время"
+          >--:--<span class="scene-clock__resize-handle" aria-hidden="true"></span></time>
+        </div>
+
+        <button
+          id="master-sound"
+          class="scene-master-sound"
+          type="button"
+          aria-pressed="false"
+          aria-label="Включить или выключить звук"
+          title="Включить или выключить звук"
+        >
+          <svg class="sound-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 10h4l5-4v12l-5-4H4z"></path>
+            <path d="M16 9.25a4 4 0 0 1 0 5.5"></path>
+          </svg>
+        </button>
+
+        <iframe
+          id="quiet-route-site"
+          title="Ночной трамвай — Тихий маршрут"
+          src="quiet-route://site/index.html?desktopHost=1"
+          allow="autoplay; fullscreen"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+
+        <p id="loading-state" class="shell-status" role="status">
+          открываю маршрут
+        </p>
+        <div id="error-state" class="shell-error" role="alert" hidden>
+          <span id="error-message">не удалось открыть маршрут</span>
+          <button id="retry-site" type="button">повторить</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

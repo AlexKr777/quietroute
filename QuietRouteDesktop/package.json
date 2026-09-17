@@ -1,0 +1,50 @@
+{
+  "name": "quiet-route-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Compact Windows desktop shell for Quiet Route",
+  "author": "Quiet Route",
+  "license": "UNLICENSED",
+  "main": "src/main.cjs",
+  "scripts": {
+    "test": "node --test test/*.node.cjs",
+    "typecheck": "node ../node_modules/typescript/bin/tsc -p tsconfig.json",
+    "site:build": "node ../node_modules/vite/bin/vite.js build --config vite.desktop.config.mjs",
+    "qa:runtime": "npm run site:build && node scripts/runtime-smoke.cjs",
+    "prestart": "npm run site:build",
+    "start": "node scripts/start.cjs",
+    "prepackage": "npm run test && npm run typecheck && npm run site:build",
+    "package": "node scripts/package.cjs"
+  },
+  "devDependencies": {
+    "electron": "43.1.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.quietroute.desktop",
+    "productName": "Тихий маршрут",
+    "asar": true,
+    "directories": {
+      "buildResources": "build",
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "site",
+        "to": "site",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.svg",
+      "artifactName": "QuietRouteDesktop-${version}-portable.${ext}"
+    }
+  }
+}
