@@ -2,6 +2,10 @@
 
 QuietRoute is an atmospheric, pixel-art night-tram experience for the web, with a companion Electron desktop shell for Windows.
 
+![Verified QuietRoute desktop runtime preview](docs/screenshots/quietroute-desktop-runtime.png)
+
+_Captured by the repository's Electron runtime smoke check on Windows._
+
 ## Features
 
 - A full-screen animated tram scene with rain, window interaction, and reduced-motion support.
